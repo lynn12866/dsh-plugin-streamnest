@@ -1,0 +1,14 @@
+node_modules
+.pnpm-store
+/lib
+**/dist
+**/build
+**/release
+**/coverage
+**/.vite
+**/.vite-temp
+**/.vitest
+**/.cache
+*.tgz
+*.tsbuildinfo
+pnpm-lock.yaml

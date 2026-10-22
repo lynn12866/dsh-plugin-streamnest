@@ -1,0 +1,3 @@
+- insert:
+    - id: streamnest
+      name: dsh-plugin-streamnest

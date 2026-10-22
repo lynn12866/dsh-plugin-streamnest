@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "rootDir": ".",
+    "outDir": "lib",
+    "sourceMap": true,
+    "types": ["node"]
+  },
+  "include": ["apps/api/src", "apps/shared/src", "packages/harness/src/index.ts"]
+}

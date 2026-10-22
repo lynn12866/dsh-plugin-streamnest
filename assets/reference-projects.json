@@ -1,0 +1,16 @@
+{
+  "downvid": {
+    "name": "DownVid",
+    "author": "yxxbc",
+    "url": "https://github.com/yxxbc/downvid",
+    "license": "MIT",
+    "licenseFile": "licenses/downvid.LICENSE"
+  },
+  "wxChannels": {
+    "name": "wx_channels_download",
+    "author": "ltaoo",
+    "url": "https://github.com/ltaoo/wx_channels_download",
+    "license": "MIT + Commons Clause",
+    "licenseFile": "licenses/wx_channels_download.LICENSE"
+  }
+}

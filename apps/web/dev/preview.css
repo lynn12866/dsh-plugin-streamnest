@@ -1,0 +1,29 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font: var(--dsw-font-xs-13);
+  color: var(--dsw-alias-label-primary);
+  background: var(--dsw-alias-bg-base);
+}
+.preview-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.preview-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 16px;
+  border-bottom: 0.5px solid var(--dsw-alias-border-l2);
+}
+.preview-content {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "StreamNest",
+    "description": "Parse media links, choose quality and save locally, with a shared queue for the UI and Agent."
+  }
+}

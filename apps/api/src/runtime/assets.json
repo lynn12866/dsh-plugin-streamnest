@@ -1,0 +1,98 @@
+{
+  "ytDlpTag": "2026.10.10.233141",
+  "ffmpegVersion": "9.0.2",
+  "ytdlp": {
+    "darwin/arm64": {
+      "name": "yt-dlp_macos",
+      "sha256": "c8ee97b3f6aa0fb5cbc3f56d772c0d79dc2c5d3d60f3bf0b240d5dd0d461fd25"
+    },
+    "darwin/x64": {
+      "name": "yt-dlp_macos",
+      "sha256": "c8ee97b3f6aa0fb5cbc3f56d772c0d79dc2c5d3d60f3bf0b240d5dd0d461fd25"
+    },
+    "linux/x64": {
+      "name": "yt-dlp_linux",
+      "sha256": "60606cef1a65d70f6639a85b45ebb7acf08dbb81831e134dd93939e23ca2b792"
+    },
+    "linux/arm64": {
+      "name": "yt-dlp_linux_aarch64",
+      "sha256": "ce8f929bbdbfb09f51563bf96f3add7cc975e1dfc91b2b9492f82a062d58d62f"
+    },
+    "win32/x64": {
+      "name": "yt-dlp.exe",
+      "sha256": "e7cafc44db8aa433da8dd78303b9157f2c1dd509c4cbfcd8418081b7e1d26a7a"
+    }
+  },
+  "ffmpeg": {
+    "darwin/arm64": {
+      "ffmpeg": {
+        "url": "https://ffmpeg.martin-riedl.de/download/macos/arm64/1789931890_9.0.2/ffmpeg.zip",
+        "checksumUrl": "https://ffmpeg.martin-riedl.de/download/macos/arm64/1789931890_9.0.2/ffmpeg.zip.sha256",
+        "sha256": "c8ed4c4e6978a03c485edbfe4e0a5dc2380f8a30bba5150531b31b094492d924",
+        "entry": "ffmpeg"
+      },
+      "ffprobe": {
+        "url": "https://ffmpeg.martin-riedl.de/download/macos/arm64/1789931890_9.0.2/ffprobe.zip",
+        "checksumUrl": "https://ffmpeg.martin-riedl.de/download/macos/arm64/1789931890_9.0.2/ffprobe.zip.sha256",
+        "sha256": "fcbe839537485eaee7a7a8bc5cbc0f90d53617e80943e8a5b2e31cb851197ea6",
+        "entry": "ffprobe"
+      }
+    },
+    "darwin/x64": {
+      "ffmpeg": {
+        "url": "https://ffmpeg.martin-riedl.de/download/macos/amd64/1789931006_9.0.2/ffmpeg.zip",
+        "checksumUrl": "https://ffmpeg.martin-riedl.de/download/macos/amd64/1789931006_9.0.2/ffmpeg.zip.sha256",
+        "sha256": "7c6b4125b191cbf773832dc51f424cf2b6bb7da43007d1e066f95909e47cacd4",
+        "entry": "ffmpeg"
+      },
+      "ffprobe": {
+        "url": "https://ffmpeg.martin-riedl.de/download/macos/amd64/1789931006_9.0.2/ffprobe.zip",
+        "checksumUrl": "https://ffmpeg.martin-riedl.de/download/macos/amd64/1789931006_9.0.2/ffprobe.zip.sha256",
+        "sha256": "2322438ed2f6319a691291b247d09c69dcaa3a982460d1f269a7e1af335cfdfd",
+        "entry": "ffprobe"
+      }
+    },
+    "linux/x64": {
+      "ffmpeg": {
+        "url": "https://ffmpeg.martin-riedl.de/download/linux/amd64/1789931100_9.0.2/ffmpeg.zip",
+        "checksumUrl": "https://ffmpeg.martin-riedl.de/download/linux/amd64/1789931100_9.0.2/ffmpeg.zip.sha256",
+        "sha256": "fa8ecf4abbd290d98f7d188b8649cc6b391ae209a98452be955a15aab1909d7f",
+        "entry": "ffmpeg"
+      },
+      "ffprobe": {
+        "url": "https://ffmpeg.martin-riedl.de/download/linux/amd64/1789931100_9.0.2/ffprobe.zip",
+        "checksumUrl": "https://ffmpeg.martin-riedl.de/download/linux/amd64/1789931100_9.0.2/ffprobe.zip.sha256",
+        "sha256": "3f428c49070be3d24ec338602b76d412e401ffcb8a5641ef0e729181a232fc32",
+        "entry": "ffprobe"
+      }
+    },
+    "linux/arm64": {
+      "ffmpeg": {
+        "url": "https://ffmpeg.martin-riedl.de/download/linux/arm64/1789931697_9.0.2/ffmpeg.zip",
+        "checksumUrl": "https://ffmpeg.martin-riedl.de/download/linux/arm64/1789931697_9.0.2/ffmpeg.zip.sha256",
+        "sha256": "93a76ae90db5474eecdf951a729857c64f3de23567228d6a7d5e6e8e3cd1021b",
+        "entry": "ffmpeg"
+      },
+      "ffprobe": {
+        "url": "https://ffmpeg.martin-riedl.de/download/linux/arm64/1789931697_9.0.2/ffprobe.zip",
+        "checksumUrl": "https://ffmpeg.martin-riedl.de/download/linux/arm64/1789931697_9.0.2/ffprobe.zip.sha256",
+        "sha256": "bcbe80fb741c180083327afaf5434812e006b33cacde2016b9aeaf6936128330",
+        "entry": "ffprobe"
+      }
+    },
+    "win32/x64": {
+      "ffmpeg": {
+        "url": "https://github.com/GyanD/codexffmpeg/releases/download/9.0.2/ffmpeg-9.0.2-essentials_build.zip",
+        "checksumUrl": "https://api.github.com/repos/GyanD/codexffmpeg/releases/tags/9.0.2",
+        "sha256": "60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba",
+        "entry": "ffmpeg-9.0.2-essentials_build/bin/ffmpeg.exe"
+      },
+      "ffprobe": {
+        "url": "https://github.com/GyanD/codexffmpeg/releases/download/9.0.2/ffmpeg-9.0.2-essentials_build.zip",
+        "checksumUrl": "https://api.github.com/repos/GyanD/codexffmpeg/releases/tags/9.0.2",
+        "sha256": "60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba",
+        "entry": "ffmpeg-9.0.2-essentials_build/bin/ffprobe.exe"
+      }
+    }
+  }
+}

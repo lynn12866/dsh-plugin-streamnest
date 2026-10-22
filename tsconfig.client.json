@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "noEmit": true,
+    "types": ["react", "react-dom"]
+  },
+  "include": [
+    "apps/web",
+    "apps/shared/src",
+    "packages/harness/src/**/*.tsx",
+    "packages/harness/src/styles.d.ts"
+  ]
+}
