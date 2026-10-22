@@ -1,7 +1,6 @@
 # StreamNest · 拾流
 
 [![DeepSeek Harness](https://img.shields.io/badge/DeepSeek-Harness-4D6BFE)](https://github.com/deepseek-ai/deepseek-harness)
-[![Stars](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgit.aimz.cc.cd%2Fapi%2Fv1%2Frepos%2Flynn1286%2Fdsh-plugin-streamnest&query=%24.stars_count&label=Stars&logo=gitea&color=orange)](https://git.aimz.cc.cd/lynn1286/dsh-plugin-streamnest/stars)
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgit.aimz.cc.cd%2Fapi%2Fv1%2Frepos%2Flynn1286%2Fdsh-plugin-streamnest%2Fraw%2Fpackage.json%3Fref%3Dmain&query=%24.version&prefix=v&label=version&color=blue)](package.json)
 [![License: MIT (original code)](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
