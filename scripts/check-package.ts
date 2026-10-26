@@ -1,10 +1,47 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
+
+interface HarnessManifest {
+  peerDependencies?: Record<string, string>;
+  devDependencies?: Record<string, string>;
+}
+
+const isHarnessSdk = (name: string): boolean => name.startsWith('@deepseek-ai/dsh-');
+
+export function validateHarnessDependencies(
+  manifest: HarnessManifest,
+  installedVersions: Readonly<Record<string, string>>,
+): void {
+  const development = Object.entries(manifest.devDependencies ?? {}).filter(([name]) =>
+    isHarnessSdk(name),
+  );
+  const peers = Object.entries(manifest.peerDependencies ?? {}).filter(([name]) =>
+    isHarnessSdk(name),
+  );
+  const releases = new Set(development.map(([name]) => installedVersions[name]));
+
+  assert(development.length > 0, 'Missing Harness development SDKs.');
+
+  for (const [name, version] of [...development, ...peers]) {
+    const installed = installedVersions[name];
+
+    assert(installed, `Missing installed Harness SDK: ${name}`);
+    assert.equal(
+      version,
+      installed,
+      `Harness SDK ${name} declares ${version}, but the build uses ${installed}.`,
+    );
+  }
+
+  assert.equal(releases.size, 1, 'Harness development SDKs must use one host release.');
+}
+
 const requiredFiles = [
   'package.json',
   'lib/index.js',
@@ -46,6 +83,27 @@ export function validatePackageFiles(paths: readonly string[]): void {
 }
 
 function checkPackage(): void {
+  const manifest = JSON.parse(
+    readFileSync(resolve(root, 'package.json'), 'utf8'),
+  ) as HarnessManifest;
+  const sdkNames = new Set(
+    [
+      ...Object.keys(manifest.devDependencies ?? {}),
+      ...Object.keys(manifest.peerDependencies ?? {}),
+    ].filter(isHarnessSdk),
+  );
+  const installedVersions = Object.fromEntries(
+    [...sdkNames].map((name) => {
+      const installed = JSON.parse(
+        readFileSync(resolve(root, 'node_modules', name, 'package.json'), 'utf8'),
+      ) as { version: string };
+
+      return [name, installed.version];
+    }),
+  );
+
+  validateHarnessDependencies(manifest, installedVersions);
+
   // Ignore lifecycle scripts here so build -> package inspection cannot recurse into verify.
   const args = [
     'pack',

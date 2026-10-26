@@ -21,7 +21,7 @@
 
 ## 安装
 
-适配 DeepSeek Harness Desktop `0.2.1-rc.2`。在「插件 → 添加插件」中输入 `dsh-plugin-streamnest`，选择 npm 官方源安装并启用，或使用 CLI：
+适配 DeepSeek Harness Desktop `0.2.1-rc.3`。在「插件 → 添加插件」中输入 `dsh-plugin-streamnest`，选择 npm 官方源安装并启用，或使用 CLI：
 
 ```bash
 dsh plugin --profile desktop add dsh-plugin-streamnest --registry=https://registry.npmjs.org/
@@ -33,7 +33,7 @@ dsh plugin --profile web add dsh-plugin-streamnest --registry=https://registry.n
 本地 `.tgz` 安装包也可在插件页选择安装，或运行：
 
 ```bash
-dsh plugin --profile desktop add file:/absolute/path/dsh-plugin-streamnest-0.1.0.tgz
+dsh plugin --profile desktop add file:/absolute/path/dsh-plugin-streamnest-0.1.1.tgz
 ```
 
 替换为安装包的实际路径和版本。安装或更新后重启应用 / Web 服务；安装时无需编译。宿主 SDK 兼容范围见 `package.json` 的 `peerDependencies`。

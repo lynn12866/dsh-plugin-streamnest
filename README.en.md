@@ -21,7 +21,7 @@ Parse audio and video links, select quality, audio tracks or subtitles, and save
 
 ## Installation
 
-Targets DeepSeek Harness Desktop `0.2.1-rc.2`. In **Plugins → Add Plugin**, enter `dsh-plugin-streamnest`, select the official npm registry, then install and enable it. Alternatively, use the CLI:
+Targets DeepSeek Harness Desktop `0.2.1-rc.3`. In **Plugins → Add Plugin**, enter `dsh-plugin-streamnest`, select the official npm registry, then install and enable it. Alternatively, use the CLI:
 
 ```bash
 dsh plugin --profile desktop add dsh-plugin-streamnest --registry=https://registry.npmjs.org/
@@ -33,7 +33,7 @@ dsh plugin --profile web add dsh-plugin-streamnest --registry=https://registry.n
 For a local `.tgz` package, select it on the plugin page or run:
 
 ```bash
-dsh plugin --profile desktop add file:/absolute/path/dsh-plugin-streamnest-0.1.0.tgz
+dsh plugin --profile desktop add file:/absolute/path/dsh-plugin-streamnest-0.1.1.tgz
 ```
 
 Replace the path and version with those of your package. Restart the app / Web service after installation or update. Installation requires no compilation. See `peerDependencies` in `package.json` for supported host SDK versions.

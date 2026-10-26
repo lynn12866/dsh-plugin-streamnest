@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
 
-import { validatePackageFiles } from '../check-package.js';
+import { validateHarnessDependencies, validatePackageFiles } from '../check-package.js';
 
 const requiredFiles = [
   'package.json',
@@ -22,6 +22,53 @@ const requiredFiles = [
   'README.en.md',
   'LICENSE',
 ];
+
+describe('published Harness compatibility', () => {
+  const tools = '@deepseek-ai/dsh-tools';
+  const primitives = '@deepseek-ai/dsh-client-ui-primitives';
+  const previous = '1.2.3-rc.1';
+  const current = '1.2.3-rc.2';
+  const manifest = {
+    peerDependencies: { [tools]: current, '@deepseek-ai/cordis': '~4.0.5' },
+    devDependencies: { [tools]: current, [primitives]: current, typescript: '^6.0.0' },
+  };
+
+  it('accepts peers built against one matching SDK release', () => {
+    expect(() =>
+      validateHarnessDependencies(manifest, { [tools]: current, [primitives]: current }),
+    ).not.toThrow();
+  });
+
+  it('rejects updating the advertised peers without updating the build SDKs', () => {
+    expect(() =>
+      validateHarnessDependencies(
+        { ...manifest, devDependencies: { [tools]: previous, [primitives]: previous } },
+        { [tools]: previous, [primitives]: previous },
+      ),
+    ).toThrow(`Harness SDK ${tools} declares ${current}, but the build uses ${previous}.`);
+  });
+
+  it('rejects mixing host releases even when each installed SDK matches its declaration', () => {
+    expect(() =>
+      validateHarnessDependencies(
+        { ...manifest, devDependencies: { [tools]: current, [primitives]: previous } },
+        { [tools]: current, [primitives]: previous },
+      ),
+    ).toThrow('Harness development SDKs must use one host release.');
+  });
+
+  it('rejects a stale installation or a non-exact peer declaration', () => {
+    expect(() =>
+      validateHarnessDependencies(manifest, { [tools]: previous, [primitives]: previous }),
+    ).toThrow('but the build uses');
+    expect(() =>
+      validateHarnessDependencies(
+        { ...manifest, peerDependencies: { [tools]: `^${current}` } },
+        { [tools]: current, [primitives]: current },
+      ),
+    ).toThrow('but the build uses');
+  });
+});
 
 describe('published package contents', () => {
   it('rejects source files, maps and development files even inside the output directory', () => {
